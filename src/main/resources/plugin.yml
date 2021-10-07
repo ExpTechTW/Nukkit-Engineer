@@ -1,0 +1,4 @@
+name: Nukkit-Engineer
+main: Nukkit_Engineer_whes1015.whes1015
+version: V 3.0.0-stable
+api: ["1.0.13"]
