@@ -25,8 +25,8 @@ import java.net.URL;
 public class whes1015 extends PluginBase implements Listener {
 
     public String a="";
-    private final int vercode=300;
-    private final String vername="V 3.0.0-stable";
+    private final int vercode=305;
+    private final String vername="V 3.0.5-stable";
 
     @Override
     public void onEnable() {
@@ -125,7 +125,6 @@ public class whes1015 extends PluginBase implements Listener {
 
     @EventHandler
     public void PlayerInteractEvent(PlayerInteractEvent event) {
-        this.getLogger().info(String.valueOf(event.getBlock().getId()));
 
         if(event.getBlock().getId()==118){
             if(!a.contains(event.getPlayer().getName())) {
