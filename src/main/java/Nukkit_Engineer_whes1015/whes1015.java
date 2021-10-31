@@ -25,8 +25,7 @@ import java.nio.charset.StandardCharsets;
 public class whes1015 extends PluginBase implements Listener {
 
     public String a="";
-    private final int vercode=305;
-    private final String vername="V 3.0.5-stable";
+    private final String vername="3.0.6-stable";
 
     @Override
     public void onEnable() {
@@ -63,7 +62,7 @@ public class whes1015 extends PluginBase implements Listener {
 
     @Override
     public void onDisable() {
-        this.getLogger().info(TextFormat.BLUE + "Nukkit-Engineer Closing! VersionName:"+vername+" VersionCode:"+vercode);
+        this.getLogger().info(TextFormat.LIGHT_PURPLE + "Nukkit-Engineer Closing! VersionName:"+vername);
     }
 
     @EventHandler
@@ -97,37 +96,26 @@ public class whes1015 extends PluginBase implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-
         if (String.valueOf(event.getInventory()).contains("FurnaceInventory")) {
             if (event.getSourceItem().getCount() > 0 && event.getSlot() == 2) {
-
                 event.getPlayer().addExperience(event.getSourceItem().getCount());
-
             }
         }
-
     }
 
     @EventHandler
     public void PlayerInteractEvent(PlayerInteractEvent event) {
-
         if(event.getBlock().getId()==118){
             if(!a.contains(event.getPlayer().getName())) {
                 a = event.getPlayer().getName() + a;
-
             }
         }
     }
     @EventHandler
     public void PlayerItemHeldEvent(PlayerItemHeldEvent event){
-
         if(a.contains(event.getPlayer().getName())&&event.getItem().getId()==0) {
-
             event.getPlayer().giveItem(Item.fromString("glass_bottle"));
             a = a.replace(event.getPlayer().getName(), "");
-
         }
-
     }
-
 }
